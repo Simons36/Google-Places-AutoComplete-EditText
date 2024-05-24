@@ -1,6 +1,6 @@
-package `in`.madapps.placesautocomplete.listener
+package my.edit.text.placesautocomplete.listener
 
-import `in`.madapps.placesautocomplete.model.PlaceDetails
+import my.edit.text.placesautocomplete.model.PlaceDetails
 
 /**
  * Created by mukeshsolanki on 28/02/19.

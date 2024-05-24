@@ -1,9 +1,9 @@
-package `in`.madapps.placesautocomplete.adapter
+package my.edit.text.placesautocomplete.adapter
 
-import `in`.madapps.placesautocomplete.PlaceAPI
+import my.edit.text.placesautocomplete.PlaceAPI
 import `in`.madapps.placesautocomplete.R
 import `in`.madapps.placesautocomplete.R.layout
-import `in`.madapps.placesautocomplete.model.Place
+import my.edit.text.placesautocomplete.model.Place
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View

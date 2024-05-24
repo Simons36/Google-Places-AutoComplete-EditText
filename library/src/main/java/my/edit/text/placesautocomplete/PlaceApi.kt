@@ -1,15 +1,16 @@
-package `in`.madapps.placesautocomplete
+package my.edit.text.placesautocomplete
 
-import `in`.madapps.placesautocomplete.exception.InitializationException
-import `in`.madapps.placesautocomplete.listener.OnPlacesDetailsListener
-import `in`.madapps.placesautocomplete.model.Address
-import `in`.madapps.placesautocomplete.model.Place
-import `in`.madapps.placesautocomplete.model.PlaceDetails
+import my.edit.text.placesautocomplete.exception.InitializationException
+import my.edit.text.placesautocomplete.listener.OnPlacesDetailsListener
+import my.edit.text.placesautocomplete.model.Address
+import my.edit.text.placesautocomplete.model.Place
+import my.edit.text.placesautocomplete.model.PlaceDetails
 import android.content.Context
 import android.text.TextUtils
 import android.util.Log
 import androidx.annotation.Nullable
 import com.google.android.gms.maps.model.LatLng
+import `in`.madapps.placesautocomplete.R
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject

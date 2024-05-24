@@ -1,11 +1,11 @@
 package `in`.madapps.placeautocompleteedittext
 
-import `in`.madapps.placesautocomplete.PlaceAPI
-import `in`.madapps.placesautocomplete.adapter.PlacesAutoCompleteAdapter
-import `in`.madapps.placesautocomplete.listener.OnPlacesDetailsListener
-import `in`.madapps.placesautocomplete.model.Address
-import `in`.madapps.placesautocomplete.model.Place
-import `in`.madapps.placesautocomplete.model.PlaceDetails
+import my.edit.text.placesautocomplete.PlaceAPI
+import my.edit.text.placesautocomplete.adapter.PlacesAutoCompleteAdapter
+import my.edit.text.placesautocomplete.listener.OnPlacesDetailsListener
+import my.edit.text.placesautocomplete.model.Address
+import my.edit.text.placesautocomplete.model.Place
+import my.edit.text.placesautocomplete.model.PlaceDetails
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.Toast

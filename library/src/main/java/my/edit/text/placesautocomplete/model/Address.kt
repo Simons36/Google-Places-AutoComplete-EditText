@@ -1,4 +1,4 @@
-package `in`.madapps.placesautocomplete.model
+package my.edit.text.placesautocomplete.model
 
 /**
  * Created by mukeshsolanki on 28/02/19.
