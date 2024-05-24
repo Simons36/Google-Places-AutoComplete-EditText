@@ -9,6 +9,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.util.Log
 import androidx.annotation.Nullable
+import com.google.android.gms.maps.model.LatLng
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -23,7 +24,7 @@ import java.net.URLEncoder
  * Created by mukeshsolanki on 28/02/19.
  */
 class PlaceAPI private constructor(
-  var apiKey: String?, var sessionToken: String?, var appContext: Context
+  var apiKey: String?, var sessionToken: String?, var appContext: Context, var locationBiasLocation : LatLng?, var locationBiasRadius : Int?
 ) {
   /**
    * Used to get details for the places api to be showed in the auto complete list
@@ -36,6 +37,9 @@ class PlaceAPI private constructor(
     try {
       val sb = buildApiUrl(PLACES_API_BASE + TYPE_AUTOCOMPLETE + OUT_JSON)
       sb.append("&input=" + URLEncoder.encode(input, "utf8"))
+        if(locationBiasLocation != null && locationBiasRadius != null){
+            sb.append("&locationbias=circle:${locationBiasRadius}@${locationBiasLocation?.latitude},${locationBiasLocation?.longitude}")
+        }
       val url = URL(sb.toString())
       conn = url.openConnection() as HttpURLConnection
       val inputStreamReader = InputStreamReader(conn.inputStream)
@@ -253,7 +257,9 @@ extendlog(jsonObj.toString())
    */
   data class Builder(
     private var apiKey: String? = null,
-    private var sessionToken: String? = null
+    private var sessionToken: String? = null,
+    private var locationBiasLocation: LatLng? = null,
+    private var locationBiasRadius: Int? = null
   ) {
     /**
      * Sets the api key for the PlaceAPI
@@ -268,6 +274,8 @@ extendlog(jsonObj.toString())
     /**
      * Builds and creates an object of the PlaceAPI
      */
-    fun build(context: Context) = PlaceAPI(apiKey, sessionToken, context)
+    fun build(context: Context) = PlaceAPI(apiKey, sessionToken, context, locationBiasLocation, locationBiasRadius)
+
+    fun addLocationBias(locationBiasLocation: LatLng, locationBiasRadius: Int) = apply { this.locationBiasLocation = locationBiasLocation; this.locationBiasRadius = locationBiasRadius }
   }
 }
